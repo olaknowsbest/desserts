@@ -1,5 +1,3 @@
-
-
 *{
   box-sizing: border-box;
   padding: 0;
@@ -55,8 +53,10 @@ div.cart > div{
 }
 
 div.cart > h4{
-  color: #E3AA91;
+  color: #C73b0f;
   font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 0.5rem;
 }
 
 div.cart h6 {

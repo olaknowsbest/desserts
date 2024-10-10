@@ -5,15 +5,9 @@ import cartIcon from "../assets/images/icon-add-to-cart.svg";
 
 export default function Card(props) {
   const [isActive,setIsActive] = useState(false)
-  const [count,setCount] = useState(1)
-  const [itemObj, setItemObj] = useState({
-   id: 0,
-   name: '',
-   category: '',
-   price: '',
-   amount: 1
-  })
+  const [count,setCount] = useState(0)
   function clickHandler(){
+    setCount(1)
     setIsActive(true)
     const itemObj = {
       id: props.id,
@@ -28,14 +22,16 @@ export default function Card(props) {
 
   function increaseCount(){
     setCount((prev)=>{
+      props.dispatchFunc({type: "increment", id: props.id, count: prev + 1})
       return prev + 1
     })
   }
   function decreaseCount(){
     setCount((prev)=>{
+      props.dispatchFunc({type: "decrement", id: props.id, count: prev - 1})
       if(prev == 1){
         setIsActive(false)
-        return 1
+        return 0
       }else{
         return prev - 1
       }

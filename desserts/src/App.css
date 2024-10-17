@@ -8,7 +8,7 @@ div.main-container{
   width: 100%;
   min-height: 100vh;
   background-color: #FCF8F5;
-  padding: 50px 
+  padding: 35px 
 }
 
 div.main-container > h1{
@@ -26,7 +26,7 @@ div.flex-container{
 
 div.flex-item-one{
   display: grid;
-  flex: 4;
+  flex: 3;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px
 }
@@ -34,15 +34,15 @@ div.flex-item-one{
 div.cart{
   position: relative;
   flex:1;
-  height: 240px;
+  min-height: 240px;
   align-self: self-start;
   background-color: white;
   transform: translateY(-20%);
   border-radius: 8px;
-  padding: 8px;
+  padding: 12px;
 }
 
-div.cart > div{
+div.cart > div.empty-cart{
   position: absolute;
   top:50%;
   left:50%;

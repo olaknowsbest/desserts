@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import cartIcon from "../assets/images/icon-add-to-cart.svg";
 
 
@@ -14,7 +14,8 @@ export default function Card(props) {
       name: props.name,
       category: props.category,
       price: props.price,
-      amount: 1
+      amount: 1,
+      image: props.image
     }
     props.dispatchFunc({type: "addItem", item: itemObj})
     // console.log(itemObj)
@@ -38,6 +39,12 @@ export default function Card(props) {
     })
   }
 
+  useEffect(()=>{
+    if(props.cartItems.length == 0){
+      setCount(0)
+      setIsActive(false)
+    }
+  },[props.cartItems.length])
 
   return (
     <div className="card">

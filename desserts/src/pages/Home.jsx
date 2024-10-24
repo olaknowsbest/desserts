@@ -34,8 +34,8 @@ function cartDetailsFunction(state,action){
       }
     case "increment":
       const newCartItems = state.cartItems.map((item,idx)=>{
-        if(item.id == action.id){
-          return {
+        if(item.id == action.id){ 
+         return {
             ...item, amount: action.count
           }
         }
@@ -149,7 +149,7 @@ export default function Home() {
                 Confirm Order
               </button>
               </div>
-            ) 
+            )
           }
         </div>
       </div>

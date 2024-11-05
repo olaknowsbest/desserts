@@ -11,6 +11,8 @@ const initialCartDetails = {
   itemTotalAmount: 0
 }
 
+const testkey = "pk_test_4fd4a8519280ea3e06e735dbf731a6cf07d85c11"
+
 function calculateTotal(array){
   const total = array.reduce((total,item)=>{
     const product = item.amount * item.price
@@ -85,6 +87,16 @@ function cartDetailsFunction(state,action){
           itemTotalAmount: total
         }
       }
+    case "remove":
+      const filterCartItemsArray = state.cartItems.filter((item)=>{
+        return item.name != action.foodName
+      })
+
+      return {
+        ...state,
+        cartItems: filterCartItemsArray,
+        itemNumber: filterCartItemsArray.length
+      }
     default:
       return state
   }
@@ -135,7 +147,8 @@ export default function Home() {
                         key={idx}
                         name={name}
                         amount={amount}
-                        price={price}                
+                        price={price} 
+                        dispatch={dispatch}               
                       />
                     )
                   })

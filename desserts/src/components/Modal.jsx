@@ -1,6 +1,33 @@
 import React from 'react'
 import tiramisu from "../assets/images/image-waffle-mobile.jpg"
+import { PaystackButton } from 'react-paystack';
+
+
 export default function Modal({cartItems,setIsModalVisible, total, dispatch}) {
+    const publicKey = "pk_test_4fd4a8519280ea3e06e735dbf731a6cf07d85c11"
+    // const amount = 10000;
+    const email = 'ibrabashar2000@gmail.com';
+
+    const onSuccess = (reference) => {
+        console.log(reference);  
+        // alert("Payment successful!");
+        setIsModalVisible(false)
+      };
+    
+    const onClose = () => {
+        console.log("Transaction was closed");  
+      };
+
+
+      const componentProps = {
+        email,
+        amount : total * 160000,
+        publicKey,
+        text: "Proceed to checkout",
+        onSuccess,
+        onClose,
+      };
+
   return (
     <div className='fixed top-0 left-0 h-screen w-screen'>
         <div 
@@ -47,10 +74,11 @@ export default function Modal({cartItems,setIsModalVisible, total, dispatch}) {
                 </div>
             </div>
             <button 
-                onClick={()=>{dispatch({type: "reset"}); setIsModalVisible(false)}}
+                // onClick={()=>{dispatch({type: "reset"}); setIsModalVisible(false)}}
                 className="w-full text-center py-2 rounded-full bg-[#c73b0f] text-white text-base font-semibold">
-                Start New Order
-              </button>
+                <PaystackButton {...componentProps} />
+            </button>
+            {/* <PaystackButton {...componentProps} /> */}
         </div>
     </div>
   )

@@ -34,7 +34,7 @@ export default function Modal({cartItems,setIsModalVisible, total, dispatch}) {
             onClick={()=>setIsModalVisible(false)}
             className='h-full w-full absolute top-0 left-0 z-10 bg-black opacity-10'>
         </div>
-        <div className='bg-white absolute rounded-lg p-6 z-20 w-[27.5%] top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%]'>
+        <div className='bg-white absolute rounded-lg p-6 z-20  w-[90%] sm:w-[50%] xl:w-[27.5%] top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%]'>
             <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21 32.121L13.5 24.6195L15.6195 22.5L21 27.879L32.3775 16.5L34.5 18.6225L21 32.121Z" fill="#1EA575" />
                 <path

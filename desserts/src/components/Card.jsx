@@ -40,7 +40,11 @@ export default function Card(props) {
   }
 
   useEffect(()=>{
-    if(props.cartItems.length == 0){
+    const foodIndex = props.cartItems.findIndex((item)=>{
+      return item.name === props.name
+    })
+    
+    if(foodIndex < 0){
       setCount(0)
       setIsActive(false)
     }

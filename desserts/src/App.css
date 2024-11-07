@@ -156,6 +156,19 @@ div.card-content > p:nth-of-type(3){
   font-weight: 600;
   color: #E3AA91;
 }
+
+@media screen and (max-width:768px) {
+  div.flex-container{
+    flex-direction: column;
+  }  
+
+  div.cart {
+    align-self: stretch;
+    background-color: white;
+    transform: translateY(0%);
+}
+}
+
 /* Mobile */
 /* @media only screen and (max-width: 480px) {
   div.cart{

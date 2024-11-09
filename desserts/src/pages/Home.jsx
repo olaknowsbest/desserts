@@ -164,7 +164,7 @@ export default function Home() {
               </div>
               <button
                 onClick={()=>setIsModalVisible(true)} 
-                className="w-full text-center py-4 rounded-full bg-[#c73b0f] text-white text-base font-semibold">
+                className="w-full text-center py-2 md:py-4 rounded-full bg-[#c73b0f] hover:opacity-90 text-white text-base font-semibold">
                   Confirm Order
               </button>
               </div>

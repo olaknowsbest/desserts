@@ -48,7 +48,7 @@ export const resturantcatalog = [
             "thumbnail": "../assets/images/image-baklava-thumbnail.jpg",
             "mobile": "../assets/images/image-baklava-mobile.jpg",
             "tablet": "../assets/images/image-baklava-tablet.jpg",
-            "desktop": "public/image-baklava-desktop.jpg"
+            "desktop": "/image-baklava-desktop.jpg"
         },
         "name": "Pistachio Baklava",
         "category": "Baklava",
